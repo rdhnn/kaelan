@@ -40,19 +40,26 @@ btnSurat.addEventListener("click", () => {
 
 // === Bagian Musik ===
 const musicBtn = document.getElementById("musicBtn");
-const audio = document.getElementById("lagu");
 const caption = document.getElementById("caption");
+const lagu = document.getElementById("lagu");
+
+let isPlaying = false;
 
 musicBtn.addEventListener("click", () => {
-  if (audio.paused) {
-    audio.play();
+  if (!isPlaying) {
+    lagu.play();
+    isPlaying = true;
     musicBtn.textContent = "⏸ Pause Musik";
     caption.classList.remove("hidden");
   } else {
-    audio.pause();
+    lagu.pause();
+    isPlaying = false;
     musicBtn.textContent = "▶ Putar Musik";
   }
 });
 
 });
+
+});
+
 
