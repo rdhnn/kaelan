@@ -1,165 +1,86 @@
 body {
-  background: #ffe6f0;
-  font-family: 'Segoe UI', sans-serif;
-  color: #d72660;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffe6f0;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  max-width: 500px;
-  margin: 60px auto;
-  background: #fff0f6;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(215,38,96,0.08);
-  padding: 32px;
   text-align: center;
+  padding: 20px;
+  background: #fff0f5;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 192, 203, 0.6);
+  z-index: 2;
   position: relative;
-  z-index: 1;
 }
 
 .judul {
-  font-size: 2.2em;
-  margin-bottom: 16px;
-  font-weight: bold;
+  color: #ff3399;
+  font-size: 2.5em;
 }
 
-.btn-nav {
+.teks-romantis {
+  font-size: 1.3em;
+  margin: 20px 0;
+  color: #cc0066;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ff66b2;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #e60073;
+}
+
+a.btn-nav {
   display: inline-block;
-  margin-top: 20px;
-  padding: 10px 24px;
+  padding: 10px 20px;
+  margin-top: 10px;
   background: #d72660;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.2s;
-  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.btn-nav:hover {
+a.btn-nav:hover {
   background: #a81d48;
 }
 
-#bg-loves {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.bg-love {
-  position: absolute;
+.hearts::before,
+.hearts::after {
+  content: '❤️';
   font-size: 2em;
-  opacity: 0.7;
-  animation: bgLoveFly linear;
-  pointer-events: none;
-  user-select: none;
-}
-
-@keyframes bgLoveFly {
-  0% {
-    transform: translateY(100vh) scale(1);
-    opacity: 0.7;
-  }
-  80% {
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateY(-10vh) scale(1.2);
-    opacity: 0;
-  }
-}
-
-@keyframes floatLove {
-  0% {
-    transform: translate(-50%, 0) scale(1);
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-    transform: translate(-50%, -180px) scale(1.2);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -220px) scale(1.3);
-  }
-}
-
-/* Teks "I love you" melayang */
-.love-fly {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2em;
-  font-weight: bold;
-  color: #d72660;
-  animation: floatLove 2.5s linear forwards;
-  pointer-events: none;
+  animation: fall 5s infinite linear;
 }
 
-/* Foto + caption */
-.foto-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-}
-
-.foto-item {
-  text-align: center;
-  max-width: 200px;
-}
-
-.foto-item img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.foto-item p {
-  margin-top: 8px;
-  font-weight: bold;
-  color: #d72660;
-}
-  .surat-box {
-  display: none;
-  margin-top: 24px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(215,38,96,0.25);
-  transform-origin: top center;
-  text-align: left;
-  overflow: hidden;
-}
-
-.surat-box h3 {
-  margin-top: 0;
-  color: #d72660;
-}
-
-@keyframes openLetter {
+@keyframes fall {
   0% {
-    opacity: 0;
-    transform: scale(0.6) rotateX(-90deg);
-  }
-  60% {
+    top: -10%;
+    left: calc(100% * var(--i));
     opacity: 1;
-    transform: scale(1.05) rotateX(15deg);
   }
   100% {
-    opacity: 1;
-    transform: scale(1) rotateX(0deg);
+    top: 110%;
+    left: calc(100% * var(--i) + 20px);
+    opacity: 0;
   }
 }
 
-.surat-box.show {
-  display: block;
-  animation: openLetter 0.6s ease forwards;
-}
+
