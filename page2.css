@@ -186,7 +186,10 @@ body {
   font-style: italic;
 }
 
-.hidden {
-  display: none;
+.music-container {
+  margin-top: 20px;
+  position: relative;
+  z-index: 1; /* biar nggak nutupin tombol lain */
 }
+
 
