@@ -39,17 +39,20 @@ btnSurat.addEventListener("click", () => {
 
 
 // === Bagian Musik ===
-const btnMusic = document.getElementById("btn-music");
+const musicBtn = document.getElementById("musicBtn");
 const audio = document.getElementById("lagu");
-const musicCaption = document.getElementById("music-caption");
+const caption = document.getElementById("caption");
 
-btnMusic.addEventListener("click", () => {
+musicBtn.addEventListener("click", () => {
   if (audio.paused) {
     audio.play();
-    btnMusic.textContent = "⏸ Pause";
-    musicCaption.classList.remove("hidden"); // munculin caption
+    musicBtn.textContent = "⏸ Pause Musik";
+    caption.classList.remove("hidden");
   } else {
     audio.pause();
-    btnMusic.textContent = "▶ Play";
+    musicBtn.textContent = "▶ Putar Musik";
   }
 });
+
+});
+
