@@ -173,3 +173,20 @@ body {
   display: block;
   animation: openLetter 0.6s ease forwards;
 }
+/* Musik */
+.music-container {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.music-container p {
+  margin-top: 12px;
+  font-size: 0.95em;
+  color: #a81d48;
+  font-style: italic;
+}
+
+.hidden {
+  display: none;
+}
+
