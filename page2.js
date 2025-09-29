@@ -35,6 +35,21 @@ const surat = document.getElementById("surat");
 
 btnSurat.addEventListener("click", () => {
   surat.classList.toggle("show");
-
 });
 
+
+// === Bagian Musik ===
+const btnMusic = document.getElementById("btn-music");
+const audio = document.getElementById("lagu");
+const musicCaption = document.getElementById("music-caption");
+
+btnMusic.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    btnMusic.textContent = "⏸ Pause";
+    musicCaption.classList.remove("hidden"); // munculin caption
+  } else {
+    audio.pause();
+    btnMusic.textContent = "▶ Play";
+  }
+});
