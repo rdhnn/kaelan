@@ -2,6 +2,7 @@ const teksArray = [
   "..........",
   "apa kabar?? baik baik aja kann??",
   "gimana hari harinya? kangen nih dengerin kamu cerita",
+  "dan juga....",
   "aku mau jujur.....",
   "aku bener bener gabisa lupain kamu",
   "tapi aku juga tau kalo kita gabisa balik lagi",
@@ -31,6 +32,7 @@ for (let i = 0; i < 20; i++) {
   heart.style.setProperty('--i', Math.random());
   hearts.appendChild(heart);
 }
+
 
 
 
