@@ -3,7 +3,7 @@ function gantiBucin() {
 
   // bikin tulisan "I love you" melayang
   const fly = document.createElement('div');
-  fly.textContent = "pathir cinta kenn";
+  fly.textContent = "pathir cinta kenn banyakkk banyakkk";
   fly.className = "love-fly";
   result.appendChild(fly);
 
@@ -37,3 +37,4 @@ btnSurat.addEventListener("click", () => {
   surat.classList.toggle("show");
 
 });
+
